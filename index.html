@@ -879,10 +879,10 @@ body{
 ====================================================================== */
 const PORTFOLIO_ITEMS = [
   {
-    title: "Reels That Retain",
+    title: "Project 29",
     tag: "Short Form",
-    duration: "00:32",
-    link: "#",
+    duration: "00:40",
+    link: "https://youtube.com/shorts/QE94kfWptJA",
     gradient: "linear-gradient(160deg,#ff5a1f 0%,#3a1608 55%,#0a0908 100%)"
   },
   {
@@ -926,7 +926,7 @@ function renderPortfolio(){
   const grid = document.getElementById('portfolioGrid');
   grid.innerHTML = PORTFOLIO_ITEMS.map(item => `
     <a class="clip-card" href="${item.link}" target="_blank" rel="noopener">
-      <div class="clip-thumb" style="position:absolute;inset:0;background:${item.gradient};"></div>
+      <div class="clip-thumb" style="position:absolute;inset:0;background:${item.gradient.startsWith('url') ? item.gradient + ';background-size:cover;background-position:center' : item.gradient};"></div>
       <div class="clip-shade"></div>
       <span class="clip-duration">${item.duration}</span>
       <div class="clip-play">
